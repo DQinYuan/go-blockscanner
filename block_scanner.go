@@ -12,6 +12,11 @@ type Block struct {
 	numStmt   int
 }
 
+// startLine is the start line of the basic block
+// endLine is the end line of the basic block
+// blockNum is the iter num of the basic block (the order is different from code sequence)
+// Return str is the content you want to insert in the head of this block
+// note: line number and col number all start from 1
 type ScanFn func(startLine, endLine token.Position, blockNum int) (insert string)
 
 type BlockScanner struct {
